@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtCore import pyqtSlot, Qt
+from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.uic import loadUi
 from Controller import Controller
@@ -13,10 +13,6 @@ class SudokuGUI(QMainWindow):
         self.setWindowTitle("Sudoku")
         self.LoadButton.clicked.connect(self.LoadButtonClicked)
         self.SolveButton.clicked.connect(self.SolveButtonClicked)
-        self.setAutoFillBackground(True)
-        p = self.palette()
-        p.setColor(self.backgroundRole(), Qt.lightGray)
-        self.setPalette(p)
 
     @pyqtSlot()
     def LoadButtonClicked(self):

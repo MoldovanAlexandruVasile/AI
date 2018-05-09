@@ -11,6 +11,7 @@ class UI:
         print("\n\tMethod:")
         print("\t\t1. BFS.")
         print("\t\t2. GBFS.")
+        print("\t\t3. DFS.")
         print("\t\t0. Back.")
 
     def printSudokuChose(self):
@@ -29,6 +30,10 @@ class UI:
                 print("Total steps done: " + str(result[1]))
             elif command == 2:
                 result = controller.GBFS(controller.getSudoku())
+                print(result[0])
+                print("Total steps done: " + str(result[1]))
+            elif command == 3:
+                result = controller.DFS(controller.getSudoku())
                 print(result[0])
                 print("Total steps done: " + str(result[1]))
             else:

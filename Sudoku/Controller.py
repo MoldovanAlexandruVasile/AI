@@ -16,6 +16,20 @@ class Controller:
                 queue += sudoku.expand(state)
         return None, step
 
+    def DFS(self, sudoku):
+        queue, visited = [], []
+        step = 0
+        queue.append(sudoku.getInitialSudoku())
+        while queue:
+            state = queue.pop()
+            step = step + 1
+            visited.append(state)
+            if sudoku.isCompleted(state):
+                return [state, step]
+            elif state not in queue:
+                queue += sudoku.expand(state)
+        return None, step
+
     def GBFS(self, sudoku):
         queue, visited = [], []
         step = 0
